@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import css from "./App.module.css";
-import Description from "./components/Description/Description.jsx";
-import Feedback from "./components/Feedback/Feedback.jsx";
-import Options from "./components/Options/Options.jsx";
-import Notification from "./components/Notification/Notification.jsx";
+import Description from "./Description/Description.jsx";
+import Feedback from "./Feedback/Feedback.jsx";
+import Options from "./Options/Options.jsx";
+import Notification from "./Notification/Notification.jsx";
 
 export default function App() {
   const [typesReview, setTypesReview] = useState(() => {
