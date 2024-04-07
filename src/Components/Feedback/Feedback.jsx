@@ -1,5 +1,5 @@
 export default function Feedback({
-  props: { good, neutral, bad },
+  typesReview: { good, neutral, bad },
   totalFeedback,
   percent,
 }) {

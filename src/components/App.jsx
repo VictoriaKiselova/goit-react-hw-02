@@ -9,7 +9,6 @@ export default function App() {
   const [typesReview, setTypesReview] = useState(() => {
     const savedReviews = localStorage.getItem("reviews");
     const date = JSON.parse(savedReviews);
-    console.log(date);
     return savedReviews !== null ? date : { good: 0, neutral: 0, bad: 0 };
   });
 
@@ -20,7 +19,7 @@ export default function App() {
     });
   };
 
-  const resetClicks = typesReview => {
+  const resetClicks = () => {
     setTypesReview({
       good: 0,
       neutral: 0,
@@ -40,14 +39,14 @@ export default function App() {
     <div className={css.text}>
       <Description />
       <Options
-        props={typesReview}
-        setFunc={resetClicks}
-        propsFunc={updateFeedback}
-        totalReview={totalFeedback}
+        typesReview={typesReview}
+        resetFeedbacks={resetClicks}
+        updateFeedback={updateFeedback}
+        totalFeedbacks={totalFeedback}
       />
       {totalFeedback > 0 ? (
         <Feedback
-          props={typesReview}
+          typesReview={typesReview}
           totalFeedback={totalFeedback}
           percent={positivePercent}
         />
