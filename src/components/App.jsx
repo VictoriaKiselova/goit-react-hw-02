@@ -33,7 +33,6 @@ export default function App() {
   let positivePercent;
   if (totalFeedback > 0) {
     positivePercent = Math.round((typesReview.good / totalFeedback) * 100);
-    console.log(positivePercent);
   }
 
   useEffect(() => {
