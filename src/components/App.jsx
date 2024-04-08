@@ -29,7 +29,12 @@ export default function App() {
 
   const totalFeedback =
     typesReview.good + typesReview.neutral + typesReview.bad;
-  const positivePercent = Math.round((typesReview.good / totalFeedback) * 100);
+
+  let positivePercent;
+  if (totalFeedback > 0) {
+    positivePercent = Math.round((typesReview.good / totalFeedback) * 100);
+    console.log(positivePercent);
+  }
 
   useEffect(() => {
     localStorage.setItem("reviews", JSON.stringify(typesReview));
