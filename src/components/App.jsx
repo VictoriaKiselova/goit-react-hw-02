@@ -13,10 +13,10 @@ export default function App() {
   });
 
   const updateFeedback = feedbackType => {
-    setTypesReview({
-      ...typesReview,
-      [feedbackType]: typesReview[feedbackType] + 1,
-    });
+    setTypesReview(prevFeedBack => ({
+      ...prevFeedBack,
+      [feedbackType]: prevFeedBack[feedbackType] + 1,
+    }));
   };
 
   const resetClicks = () => {
